@@ -2,11 +2,15 @@
 ###################### Hexo Configuration #######################
 #################################################################
 
-title: NexT
+title: Co1In
 
 keywords: "Hexo, NexT"
 
 language: en
+
+author: Colin Chen
+
+description: hahaha
 
 index_generator:
   per_page: 4
@@ -106,14 +110,11 @@ theme_config:
 
   minify: true
 
-  custom_file_path:
-    variable: source/_data/variables.styl
-    footer: source/_data/footer.swig
-    sidebar: source/_data/sidebar.swig
-
   # ============================================================= #
   # ================= Site Information Settings ================= #
   # ============================================================= #
+
+  author: Colin Chen
 
   footer:
     since: 2014
@@ -174,7 +175,13 @@ theme_config:
     offset: 12
     onmobile: true
 
-  avatar: /uploads/avatar.jpg
+  avatar:
+    # Replace the default image and set the url here.
+    url: /uploads/avatar.jpg
+    # If true, the avatar will be dispalyed in circle.
+    rounded: true
+    # If true, the avatar will be rotated with the cursor.
+    rotated: false
 
   social:
     GitHub: https://github.com/co1in9 || github
@@ -225,10 +232,10 @@ theme_config:
     sidebar: false
     scrollpercent: true
 
-  github_banner:
-    enable: true
-    permalink: https://github.com/theme-next/hexo-theme-next
-    title: Fork NexT on GitHub
+  # github_banner:
+  #   enable: true
+  #   permalink: https://github.com/theme-next/hexo-theme-next
+  #   title: Fork NexT on GitHub
 
   # ============================================================= #
   # ======================= SEO Settings ======================== #

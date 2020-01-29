@@ -1,0 +1,49 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build
+        run: |
+          npm ci
+          ./node_modules/hexo/bin/hexo generate
+          ls -al public
+        env:
+          CI: true
+      - name: Upload public
+        uses: actions/upload-artifact@v1
+        with:
+          name: public
+          path: public
+
+  push:
+    name: push public to Aliyun OSS
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download public
+        uses: actions/download-artifact@v1
+        with:
+          name: public
+      - name: List dir
+        shell: bash
+        run: |
+          ls -al
+      - shell: bash
+        run: |
+          wget http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
+          chmod +x ossutil64
+          ./ossutil64 cp -e oss-cn-shanghai.aliyuncs.com -i ${{ secrets.access_key_id }} -k ${{ secrets.access_key_secret }} -r -f public oss://co1in-public/

@@ -35,21 +35,8 @@ COMPILE_FILES = [
 ]
 
 APP_LIST = [
-    'base',
-    'device',
-    'flashing',
-    'issues',
-    'notification',
-    'permissions',
-    'pipeline_tasks',
-    'projects',
-    'reports',
-    'results',
-    'runner',
-    'scripts',
-    'tasks',
-    'verify',
-    'data_statistics',
+    'foo',
+    'bar',
 ]
 
 

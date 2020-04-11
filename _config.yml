@@ -177,7 +177,7 @@ theme_config:
 
   avatar:
     # Replace the default image and set the url here.
-    url: /uploads/avatar.jpg
+    url: /uploads/avatar.jpg?x-oss-process=image/resize,p_20
     # If true, the avatar will be dispalyed in circle.
     rounded: true
     # If true, the avatar will be rotated with the cursor.

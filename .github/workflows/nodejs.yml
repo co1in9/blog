@@ -30,7 +30,7 @@ jobs:
           path: public
 
   push:
-    name: push public to Aliyun OSS
+    name: push public to Tencent COS
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -38,10 +38,6 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: public
-      - name: List dir
-        shell: bash
-        run: |
-          ls -al
       - name: Tencent Cloud COS Action
         uses: TencentCloud/cos-action@v1
         with:
@@ -49,5 +45,5 @@ jobs:
           secret_key: ${{ secrets.secret_key }}
           cos_bucket: public-1300764707
           cos_region: ${{ secrets.cos_region }}
-          local_path: .
+          local_path: ./public/
           remote_path: .

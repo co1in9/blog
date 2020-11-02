@@ -34,7 +34,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Download public
+      - name: Download artifact
         uses: actions/download-artifact@v1
         with:
           name: public
@@ -42,8 +42,12 @@ jobs:
         shell: bash
         run: |
           ls -al
-      - shell: bash
-        run: |
-          wget http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
-          chmod +x ossutil64
-          ./ossutil64 cp -e oss-cn-shanghai.aliyuncs.com -i ${{ secrets.access_key_id }} -k ${{ secrets.access_key_secret }} -r -f public oss://co1in-public/
+      - name: Tencent Cloud COS Action
+        uses: TencentCloud/cos-action@v1
+        with:
+          secret_id: ${{ secrets.secret_id }}
+          secret_key: ${{ secrets.secret_key }}
+          cos_bucket: public-1300764707
+          cos_region: ${{ secrets.cos_region }}
+          local_path: .
+          remote_path: .

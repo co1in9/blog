@@ -17,7 +17,7 @@ curl  https://get.acme.sh | sh
 export DP_Id="1234"
 export DP_Key="sADDsdasdgdsf"
 
-acme.sh --issue --dns dns_cf -d '*.co1in.com'
+acme.sh --issue --dns dns_dp -d '*.co1in.com'
 ```
 
 申请后的证书文件

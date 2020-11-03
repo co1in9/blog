@@ -154,13 +154,14 @@ theme_config:
   menu:
     home: / || bullhorn
 
-    Docs:
-      default: /docs/ || book
+    # Docs:
+    #   default: /docs/ || book
+    
 
-      Advanced Settings: /advanced-settings.html || cogs
-      FAQ's: /faqs.html || life-ring
-      Troubleshooting: /troubleshooting.html || bug
-    archives: /archives/ || archive
+      # Advanced Settings: /advanced-settings.html || cogs
+      # FAQ's: /faqs.html || life-ring
+      # Troubleshooting: /troubleshooting.html || bug
+    # archives: /archives/ || archive
     #sitemap: /sitemap.xml || sitemap
     #commonweal: /404/ || heartbeat
 
@@ -195,7 +196,7 @@ theme_config:
     # Gitter: https://gitter.im/theme-next || github-alt
     # Riot: https://riot.im/app/#/room/#NexT:matrix.org || bullhorn
 
-    # WeChat: /uploads/wechat.jpg || wechat
+    WeChat: /uploads/wechat.jpg || wechat
 
     Telegram [Chat]: https://t.me/joinchat/GUNHXA-vZkgSMuimL1VmMw || telegram
     # Telegram [News]: https://t.me/theme_next || paper-plane

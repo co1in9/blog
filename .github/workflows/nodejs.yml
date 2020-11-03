@@ -38,12 +38,16 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: public
-      - name: Tencent Cloud COS Action
-        uses: TencentCloud/cos-action@v1
+      - name: Tencent COS Action
+        uses: zkqiang/tencent-cos-action@v0.1.0
         with:
+          # COSCMD args, detail: https://cloud.tencent.com/document/product/436/10976
+          args: upload -r ./public/ /
+          # Tencent cloud SecretId, from: https://console.cloud.tencent.com/cam/capi
           secret_id: ${{ secrets.secret_id }}
+          # Tencent cloud SecretKey, from: https://console.cloud.tencent.com/cam/capi
           secret_key: ${{ secrets.secret_key }}
-          cos_bucket: public-1300764707
-          cos_region: ${{ secrets.cos_region }}
-          local_path: ./public/
-          remote_path: .
+          # COS bucket name
+          bucket: public-1300764707
+          # COS bucket region, detail: https://cloud.tencent.com/document/product/436/6224
+          region: ${{ secrets.cos_region }}

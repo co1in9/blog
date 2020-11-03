@@ -195,7 +195,7 @@ theme_config:
     # Gitter: https://gitter.im/theme-next || github-alt
     # Riot: https://riot.im/app/#/room/#NexT:matrix.org || bullhorn
 
-    WeChat: /uploads/wechat.jpg || wechat
+    # WeChat: /uploads/wechat.jpg || wechat
 
     Telegram [Chat]: https://t.me/joinchat/GUNHXA-vZkgSMuimL1VmMw || telegram
     # Telegram [News]: https://t.me/theme_next || paper-plane

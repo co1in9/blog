@@ -272,7 +272,7 @@ theme_config:
   # ============================================================= #
 
   disqus:
-    enable: true
+    enable: false
     shortname: theme-next
     count: true
     lazyload: true
